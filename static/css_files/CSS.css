@@ -1,0 +1,56 @@
+.caption {
+      padding-top: 15%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+.caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 15px;
+      font-size: 15px;
+      letter-spacing: 5px;
+      }
+
+.desc {
+ position: absolute;
+ Height: 20rem;
+ width: 1200px;
+ opacity: 30%
+ }
+
+.img_desc{
+      position: absolute;
+      padding-top: 5%;
+      width: 100%;
+      text-align: center;
+      color: black;
+      font: 400 25px/1.8 "Lato", sans-serif;
+      border: 2px;
+}
+
+.tree{
+    height:600px;
+    width: 100%;
+    background-image: url({% static 'insta/leaf.jpg' %});
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.leaf-text{
+    padding-top:300px;
+    color: black;
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-family: Garamond, serif;
+}
+.leaf-text1{
+    color: black;
+    font-size: 50px;
+    letter-spacing: 5px;
+     font-family: Georgia, serif;
+}
+
+

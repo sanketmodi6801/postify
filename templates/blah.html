@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+
+    {% for i in cat %}
+<a href="{% url 'post' id=1 %}">{{ i.name }}</a>
+
+
+    <div class="section">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-4 content text-center">
+                  <img src="{{i.img}}" alt="image1"  style="height: 230px; width: 330px;">
+              </div>
+          </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="container-fluid" style="background-color:#D2D69C; height:100px;">
+  <div class="section">
+
+      <div class="container-fluid">
+          <div class="row">
+              {% for i in cat %}
+              <div class="col">
+                  <img src="{{i.img}}" alt="image1"  style="height: 130px; width: 230px;">
+              </div>
+              {%if forloop.counter|divisibleby:4 %}
+              </div>
+
+              {% endif %}
+              {% endfor %}
+          </div>
+      </div>
+    </div>
+
+</div>
+{% for each in post %}
+    {{ each.name }}
+{% endfor %}
+
+
+
+</body>
+</html>

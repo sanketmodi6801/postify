@@ -1,0 +1,313 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container-fluid tree" >
+    <div class="container">
+        <h1 class="leaf-text ">POSTIFY</h1>
+        <section class="container-fluid">
+            <form action="{% url 'search' %}" method="post" role="search"> {% csrf_token %}
+                  <div class="input-group">
+                      <input class="form-control border-end-0 border-dark rounded-pill" type="search" name="searched"
+                             placeholder="SEARCH POSTS......">
+                      <span class="input-group-append">
+                          <button class="btn btn-outline-dark bg-transparent border-start-0 border-dark rounded-pill ms-n3"
+                        type="submit">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                          </button>
+                      </span>
+                  </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row cat">
+        <div class="col-md-6 box">
+            <div class="col-md-4">
+                <h1 class="leaf-text1" style="padding-top:70px;"> POSTIFY </h1>
+                <span>The open source instagram posts <br>website. Get your categorized <br> posts at one place.</span><br><br>
+                <button type="button" class="btn btn-dark" style=" font-size:10px; padding-left:30px; padding-right:30px;">CONTACT US</button>
+            </div>
+        </div>
+        <div class="col-md-4 side-texture">
+            <div class="container texture"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+</div>
+
+<!--<a href="{% url 'post' 1 %}"><p>hello</p> </a>-->
+
+<!--<div class="container-fluid" style="background-color:#D2D69C; height:100px;">-->
+<!--  <div class="section">-->
+
+<!--      <div class="container-fluid">-->
+<!--          <div class="row">-->
+<!--              {% for i in cat %}-->
+<!--              <div class="col">-->
+<!--                  <img src="{{i.img}}" alt="image1"  style="height: 130px; width: 230px;">-->
+<!--              </div>-->
+<!--              {% endfor %}-->
+<!--              </div>-->
+<!--          </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--<div class="container-fluid" >-->
+<!--    <div class="row rowspace">-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="https://wallpaperaccess.com/thumb/20008.jpg" alt="" >-->
+<!--                <div class="centered"><p><a href="{% url 'post' 1 %}">Helloo</a></p></div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="https://wallpaperaccess.com/thumb/257005.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="https://wallpaperaccess.com/thumb/767277.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="fourcols" src="https://wallpaperaccess.com/thumb/3168162.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row rowspace">-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/1872.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/1343.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/191736.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row rowspace">-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="https://wallpaperaccess.com/thumb/1595226.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row rowspace">-->
+<!--        <div class="col-md-4">-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/20008.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/20008.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-4" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="threecols" src="https://wallpaperaccess.com/thumb/20008.jpg" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <div class="row rowspace">-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative; padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-3" >-->
+<!--            <div class="container-fluid" style="position:relative;padding:0px;">-->
+<!--                <img class="fourcols" src="{% static 'insta/leaf.jpg' %}" alt="" >-->
+<!--                <div class="centered"><p>Helloo</p></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</div>-->
+
+<div class="container-fluid" >
+        <div class="row rowspace">
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/20008.jpg" alt="" >
+                    <div class="centered"><p><a href="{% url 'post' 1 %}">Automobiles</a></p></div>
+
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/257005.jpg" alt="" >
+                   <div class="centered"><p><a href="{% url 'post' 2 %}">Street</a></p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/767277.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/3168162.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowspace">
+            <div class="col-md-4">
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/1872.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/1343.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/191736.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowspace">
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/1595226.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/1332228.jpg" alt="" >
+                    <div class="centered"><p>Monochrome</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/2878902.jpg" alt="" >
+                    <div class="centered"><p>Journalism</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/24037.jpg" alt="" >
+                    <div class="centered"><p>Cartoon</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowspace">
+            <div class="col-md-4">
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/1824854.png" alt="" >
+                    <div class="centered"><p>Still Life</p></div>
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/4354741.jpg" alt="" >
+                    <div class="centered"><p>Animals</p></div>
+                </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="threecols" src="https://wallpaperaccess.com/thumb/4685960.jpg" alt="" >
+                    <div class="centered"><p>Technology</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row rowspace">
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/4887484.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/530366.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative; padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/1178078.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+            <div class="col-md-3" >
+                <div class="container-fluid" style="position:relative;padding:0px;">
+                    <img class="fourcols" src="https://wallpaperaccess.com/thumb/366356.jpg" alt="" >
+                    <div class="centered"><p>Helloo</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="{% static 'css_files/CSS.css' %}">
+    <style>
+
+
+.parallax {
+    position:relative;
+    background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 30%;
+    background-image: url({% static 'insta/auto.jpg' %});
+
+  }
+
+.btn:hover{
+    color:#fff;
+}
+
+.input-text:focus{
+
+
+    box-shadow: 0px 0px 0px;
+    border-color:#f8c146;
+    outline: 0px;
+}
+
+.form-control {
+    border: 1px solid #f8c146;
+}
+
+.tree{
+    height:600px;
+    width: 100%;
+    background-image: url({% static 'insta/leaf.jpg' %});
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.leaf-text{
+    padding-top:300px;
+    padding-left:80px;
+    color: black;
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-family: Garamond, serif;
+    text-shadow: 1px 1px 2px white;
+
+}
+.leaf-text1{
+    color: black;
+    font-size: 50px;
+    letter-spacing: 5px;
+     font-family: Georgia, serif;
+}
+.cat{
+    position:relative;
+    background-color:#BD9CD6;
+    height:500px;
+    width:auto;
+    padding-top:50px;
+    padding-left:70px;
+
+}
+.box{
+    padding-left:50px;
+    background-color:white;
+    height:400px;
+    width:700px;
+}
+.texture{
+    position:absolute;
+    background-image: url({% static 'insta/texture.png' %});
+    height:320px;
+    width:400px;
+    margin-left:-100px;
+    margin-top:100px;
+}
+.star{
+    position:relative;
+    background-image: url({% static 'insta/first.jpg' %});
+    height:350px;
+    width:400px;
+    margin-left:-30px;
+    margin-top:20px;
+}
+.side-texture{
+    background-image: url({% static 'insta/brown.jpg' %});
+    height:450px;
+    width:400px;
+    margin-top:-20px;
+}
+.overlay{
+    z-index:1;
+    margin-left:500px;
+    margin-top:-500px;
+}
+.input-group{
+width:500px;
+}
+.form-control{
+background-color:transparent;
+}
+.form-control:hover{
+background-color:#DBD8D8;
+}
+
+.fourcols{
+     position: relative;
+    height: 230px;
+    width: 290px;
+}
+.threecols{
+     position: relative;
+    height: 230px;
+    width: 400px;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.rowspace{
+    padding-top:20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+        .banner-image {
+        background-image: url('plant.jpg');
+        background-size: cover;
+      }
+
+      /* color after scroll */
+      .bg-dark{
+        background-color: #d6bd9c !important;
+      }
+
+      /* search-bar */
+      *{
+	    margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+	    font-family: 'Montserrat', sans-serif;
+    }
+
+    .wrapper{
+        padding-right: 0px;
+        margin:0px;
+
+    }
+
+    .search_box
+    {
+<!--	background: #643fef;-->
+	background: #BD9CD6;
+	position: relative;
+	padding: 5px;
+	border-radius: 30px;
+	display: flex;
+
+    }
+
+    .search_box .search_btn
+    {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+<!--	background: #7a5cf0;-->
+	background: #BD9CD6;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    margin-right: 5px;
+	cursor: pointer;
+    }
+
+    .search_box .input_search
+    {
+	outline: none;
+	border: 0;
+    color: #BD9CD6;
+    border-radius: 50px;
+    background: #BD9CD6;
+    padding: 5px 10px;
+    }
+
+    ::placeholder
+    {
+    color: #fff;
+    }
+
+.offbut{
+    display: block;
+    width: full;
+    height: 45px;
+    background: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    text-decoration:none;
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top" style="padding:0px; background:black;">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color:#e3f8fd;" href="{% url 'categories' %}">BLAH</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+          <a class="nav-link" style="color:white;" href="{% url 'categories' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " style="color:white;" type="button" data-bs-toggle="offcanvas"
+                 data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Categories</a>
+        </li>
+        <li class="nav-item">
+          <form class="d-flex" method="post" role="search" action="{% url 'search' %}">
+                {% csrf_token %}
+                    <div class="wrapper">
+                        <div class="search_box">
+                            <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                            <input type="search" class="input_search" placeholder="Search" name="searched">
+                        </div>
+                    </div>
+                </form>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+</nav>
+ <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"
+                 aria-labelledby="offcanvasExampleLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Categories</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+               <div>
+                   {% for i in cat %}
+                   <div class="container-fluid" style="padding:0px;">
+                       <div class="row" style="padding:5px; justify-content:center;">
+                           <a class="offbut" href="{% url 'post' i.id %}" >{{ i.name }}</a>
+                       </div>
+                   </div>
+                   {% endfor %}
+               </div>
+              </div>
+            </div>
+
+
+<!--<nav class="navbar fixed-top navbar-dark p-md-3 bg-transparent">-->
+<!--  <div class="container-fluid">-->
+<!--    <a class="navbar-brand " style="color:#e3f8fd;" href="{% url 'categories' %}">BLAH</a>-->
+<!--    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">-->
+<!--  Button with data-bs-target-->
+<!--</button>-->
+
+<!--    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasExample"-->
+<!--         aria-labelledby="offcanvasExampleLabel">-->
+<!--      <div class="offcanvas-header">-->
+<!--        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>-->
+<!--        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>-->
+<!--      </div>-->
+<!--      <div class="offcanvas-body">-->
+<!--        <div>-->
+<!--            {% for i in cat %}-->
+<!--            <a href="{% url 'post' i.id %}">{{ i.name }}</a>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--    <form class="d-flex" method="post" role="search" action="{% url 'search' %}"> {% csrf_token %}-->
+<!--      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">-->
+<!--      <button class="btn btn-outline-success" type="submit">-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">-->
+<!--              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>-->
+<!--          </svg>-->
+<!--      </button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+<!--<nav class="navbar fixed-top navbar-dark p-md-1 bg-transparent">-->
+<!--     <div class="container-fluid">-->
+<!--            <a class="navbar-brand " style="color:#e3f8fd; margin:0px;" href="{% url 'categories' %}">BLAH</a>-->
+<!--          <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">Link</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled">Disabled</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--       <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--           <li class="nav-item">-->
+<!--               <button class="btn btn-primary align-item-end" type="button" data-bs-toggle="offcanvas"-->
+<!--                 data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Categories</button>-->
+<!--           </li>-->
+<!--           <li class="nav-item">-->
+<!--                <form class="d-flex" method="post" role="search" action="{% url 'search' %}">-->
+<!--                {% csrf_token %}-->
+<!--                    <div class="wrapper">-->
+<!--                        <div class="search_box">-->
+<!--                            <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>-->
+<!--                            <input type="search" class="input_search" placeholder="Search" name="searched">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--           </li>-->
+<!--       </ul>-->
+
+
+<!--     </div>-->
+<!--</nav>-->
+<!-- <div>
+                  {% for i in cat %}
+                  <a href="{% url 'post' i.id %}">{{ i.name }}</a>
+                  {% endfor %}
+              </div> -->
+
+<!--           <form class="d-flex" method="post" role="search" action="{% url 'search' %}">-->
+<!--             {% csrf_token %}-->
+<!--          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="searched">-->
+<!--            <button class="btn btn-outline-success" type="submit">-->
+<!--                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">-->
+<!--                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>-->
+<!--                </svg>-->
+<!--            </button>-->
+
+
+
+
+{% block content %}
+
+{% endblock %}
+
+<div class="container-fluid" style="padding:0px; padding-top:20px;">
+ <div class="container-fluid bg-dark text-center" style="height: 270px;">
+      <p class="py-3 fw-bold display-6" style="color: black;">Postify</p>
+     <div class="row align-items-center" style="color:black;">
+    <div class="col-4">
+
+    </div>
+    <div class="col-1">
+      Home
+    </div>
+    <div class="col-1">
+      About
+    </div>
+    <div class="col-1">
+      Contact
+    </div>
+    <div class="col-1">
+      Blog
+    </div>
+    <div class="col-4">
+    </div>
+
+
+  </div>
+
+<br>
+
+<section class="text-center mb-5">
+  <a href="" class="text-black me-4">
+    <i class="fab fa-facebook-f fa-xl"></i>
+  </a>
+  <a href="" class="text-black me-4">
+    <i class="fab fa-twitter fa-xl"></i>
+  </a>
+  <a href="" class="text-black me-4">
+    <i class="fab fa-google fa-xl"></i>
+  </a>
+  <a href="" class="text-black me-4">
+    <i class="fab fa-instagram fa-xl"></i>
+  </a>
+  <a href="" class="text-black me-4">
+    <i class="fab fa-linkedin fa-xl"></i>
+  </a>
+  <a href="" class="text-black me-4">
+    <i class="fab fa-github fa-xl"></i>
+  </a>
+</section>
+
+<div class="text-center p-3" style=" color: black;    background-color: rgba(0, 0, 0,0.2)">© 2022 Copyright:
+      <a class="text-white" href="#">Postfiy.com</a>
+    </div>
+
+    </div>
+    </div>
+
+
+
+
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<!--<script async src="//www.instagram.com/embed.js"></script>-->
+<script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+<script type="text/javascript">
+var nav = document.querySelector('nav');
+
+window.addEventListener('scroll', function () {
+  if (window.pageYOffset > 100) {
+    nav.classList.add('bg-dark', 'shadow');
+  } else {
+    nav.classList.remove('bg-dark', 'shadow');
+  }
+});    </script>
+
+</html>

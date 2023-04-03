@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+
+{% if search %}
+<h1 style="padding:50px;">You searched for...{{search}} </h1>
+{% endif %}
+
+
+<div class="container-fluid" style="background-color: black;">
+<div class="row">
+     {% for i in searched %}
+      <div class="col-md-3 mx-4 my-3" style="padding-left:70px;" >
+            <blockquote class="instagram-media" data-instgrm-permalink="{{i.link}}" data-instgrm-version="12"
+                        style=" background:#FFF; border:5; border-radius:3px;
+                        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+                        margin: 1px; max-width:10%; padding:0; width:10%; width:450px;
+                        height:400px; width:150px;">
+            </blockquote>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+{% endblock %}

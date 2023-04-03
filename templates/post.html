@@ -1,0 +1,62 @@
+{% extends 'main.html'%}
+
+{% block content %}
+{% load static %}
+
+<br>
+<div class="container" style=" position:absolute;">
+         {% for i in arg %}{% if forloop.counter <= 1 %}
+            <div class="caption">
+            <span class="border">{{i.category_id}}</span>
+            </div>
+            <div class="container img_desc">
+                {% for i in arg1 %}
+                {{i.desc}}
+
+            </div>
+</div>
+<div class="parallax" style="height:350px" width="750px" >
+<!--    <img src="{{i.img}}"  style="height:350px" width="750px" alt="">-->
+</div>
+{% endfor %}
+{% endif %}
+{% endfor %}
+<div class="container-fluid" style="background-color: black;">
+<div class="row">
+      {% for i in arg %}
+      <div class="col-md-3 mx-3 my-3" style="padding-left:70px;" >
+            <blockquote class="instagram-media" data-instgrm-permalink="{{i.link}}" data-instgrm-version="12"
+                        style=" background:black; border:5; border-radius:3px;
+                        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+                        margin: 1px; max-width:10%; padding:0; width:10%; width:450px;
+                        height:700px; width:150px;">
+            </blockquote>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<br>
+<div class="container-fluid" style="background-color: black;">
+<div class="row">
+      {% for i in auto %}
+      <div class="col-md-3 mx-4 my-3" style="padding-left:70px;" >
+            <blockquote class="instagram-media" data-instgrm-permalink="{{i.link}}" data-instgrm-version="12"
+                        style=" background:#FFF; border:5; border-radius:3px;
+                        box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);
+                        margin: 1px; max-width:10%; padding:0; width:10%; width:450px;
+                        height:400px; width:150px;">
+            </blockquote>
+      </div>
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
